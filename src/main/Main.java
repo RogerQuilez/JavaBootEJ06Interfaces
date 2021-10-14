@@ -22,7 +22,7 @@ public class Main {
 		
 		añadirTrayectos(trayectos, vehiculos);
 
-		List<Thread> threadList = getThreads(trayectos);
+		List<Thread> threadList = getThreads(vehiculos);
 		
 		runThreads(threadList);
 		
@@ -44,12 +44,12 @@ public class Main {
 	 * @param trayectos -> Lista de tipo Trayecto enviada por parámetro para conseguir los hilos
 	 * @return -> Devuelve una lista con los hilos de los trayectos
 	 */
-	private static List<Thread> getThreads(List<Trayecto> trayectos) {
+	private static List<Thread> getThreads(List<Vehiculo> vehiculos) {
 		List<Thread> threadList = new LinkedList<>();
 		
-		for (Trayecto t: trayectos) {
-			Thread trayectoT = new Thread(t.getThread());
-			threadList.add(trayectoT);
+		for (Vehiculo v: vehiculos) {
+			Thread vehiculoT = new Thread(v.getEmpezarTrayecto());
+			threadList.add(vehiculoT);
 		}
 		
 		return threadList;
@@ -65,7 +65,7 @@ public class Main {
 		trayectos.add(new Trayecto("Galicia", 600));
 		trayectos.add(new Trayecto("Asturias", 600));
 		trayectos.add(new Trayecto("Formentera", 7000));
-		trayectos.add(new Trayecto("Nueva York", 8000));
+		trayectos.add(new Trayecto("Nueva York", 20000));
 		
 		return trayectos;
 	}
@@ -95,7 +95,6 @@ public class Main {
 	 */
 	public static void añadirTrayectos(List<Trayecto> trayectos, List<Vehiculo> vehiculos) {
 		for (int i = 0; i < 4; i++) {
-			trayectos.get(i).setVehiculo(vehiculos.get(i));
 			vehiculos.get(i).setTrayecto(trayectos.get(i));
 		}
 	}

@@ -34,9 +34,8 @@ public class Main {
 	
 	public static void printarDistanciaVehiculos(List<Vehiculo> vehiculos) {
 		for (Vehiculo v: vehiculos) {
-			String unidad = v instanceof Barco ? "Nudos" : "Km";
 			System.out.println(v.getNombre() + " -> " + 
-					v.moverVehiculo(generateRandomNumber(300, 100)) + " " + unidad);
+					v.moverVehiculo(generateRandomNumber(300, 100)));
 		}
 	}
 	

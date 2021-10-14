@@ -4,11 +4,13 @@ import entity_interface.Movible;
 
 public abstract class Vehiculo implements Movible{
 
+	private static int countId;
 	private int id;
 	private int potencia;
 	private String nombre;
 	
 	public Vehiculo(int potencia, String nombre) {
+		this.id = ++Vehiculo.countId;
 		this.potencia = potencia;
 		this.nombre = nombre;
 	}

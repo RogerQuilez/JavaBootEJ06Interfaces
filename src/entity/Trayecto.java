@@ -9,6 +9,9 @@ public class Trayecto {
 	private String nombreDestino;
 	private Vehiculo vehiculo;
 	
+	/**
+	 * Objeto Runnable que contiene el método run donde indicamos el recorrido del vehiculo, desde el inicio hasta el fin
+	 */
 	private Runnable thread = () -> {
 		
 		System.out.println("Empezando el trayecto " + this.nombreDestino + " con " + this.vehiculo.getNombre() + "! "
@@ -20,6 +23,9 @@ public class Trayecto {
 		
 	};
 
+	/**
+	 * Printa la distancia recorrida y la que le queda por recorrer cada 1 segundo
+	 */
 	private void recorrido() {
 		while (this.recorrido < this.distancia) {
 			

@@ -28,12 +28,22 @@ public class Main {
 		
 	}
 	
+	/**
+	 * 
+	 * @param threadList -> Lista con todos los hilos de los distintos trayectos
+	 * Inicia los hilos
+	 */
 	private static void runThreads(List<Thread> threadList) {
 		for (Thread t: threadList) {
 			t.start();
 		}		
 	}
 
+	/**
+	 * 
+	 * @param trayectos -> Lista de tipo Trayecto enviada por parámetro para conseguir los hilos
+	 * @return -> Devuelve una lista con los hilos de los trayectos
+	 */
 	private static List<Thread> getThreads(List<Trayecto> trayectos) {
 		List<Thread> threadList = new LinkedList<>();
 		
@@ -45,6 +55,10 @@ public class Main {
 		return threadList;
 	}
 
+	/**
+	 * 
+	 * @return -> Devuelve una lista de trayectos
+	 */
 	private static List<Trayecto> getTrayectos() {
 		List<Trayecto> trayectos = new LinkedList<>();
 		
@@ -56,6 +70,10 @@ public class Main {
 		return trayectos;
 	}
 
+	/**
+	 * 
+	 * @return -> Devuelve una lista de vehiculos
+	 */
 	public static List<Vehiculo> getVehiculos() {
 		
 		List<Vehiculo> vehiculos = new LinkedList<>();
@@ -69,17 +87,16 @@ public class Main {
 		
 	}
 	
+	/**
+	 * 
+	 * @param trayectos --> Lista de trayectos
+	 * @param vehiculos --> Lista de vehiculos
+	 * Para cada trayecto le añadimos un vehiculo y viceversa
+	 */
 	public static void añadirTrayectos(List<Trayecto> trayectos, List<Vehiculo> vehiculos) {
 		for (int i = 0; i < 4; i++) {
 			trayectos.get(i).setVehiculo(vehiculos.get(i));
 			vehiculos.get(i).setTrayecto(trayectos.get(i));
-		}
-	}
-	
-	public static void printarDistanciaVehiculos(List<Vehiculo> vehiculos) {
-		for (Vehiculo v: vehiculos) {
-			System.out.println(v.getNombre() + " -> " + 
-					v.moverVehiculo(Utils.generateRandomNumber(300, 100)));
 		}
 	}
 	

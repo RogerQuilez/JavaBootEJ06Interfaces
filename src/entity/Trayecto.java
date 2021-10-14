@@ -38,12 +38,26 @@ public class Trayecto {
 						+ "km's, quedan " + (this.distancia - this.recorrido) + "km's");
 				
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(getInterval());
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 			
+		}
+	}
+	
+	/**
+	 * 
+	 * @return -> Devuelve el intervalo de tiempo que tardara en volver a ejecutarse el hilo dependiendo de su instancia
+	 */
+	private int getInterval() {
+		if (vehiculo instanceof Moto || vehiculo instanceof Coche) {
+			return 5000;
+		} else if (vehiculo instanceof Barco) {
+			return 8000;
+		} else {
+			return 1000;
 		}
 	}
 	

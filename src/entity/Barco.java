@@ -7,8 +7,8 @@ public class Barco extends Vehiculo {
 	}
 
 	@Override
-	public String moverVehiculo(int metros) {
-		return "Distancia recorrida: " + metros + this.getPotencia()*2 + " Nudos";
+	public int moverVehiculo(int metros) {
+		return metros + this.getPotencia()*2;
 	}
 
 }

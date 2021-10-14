@@ -8,6 +8,7 @@ public abstract class Vehiculo implements Movible{
 	private int id;
 	private int potencia;
 	private String nombre;
+	private Trayecto trayecto;
 	
 	public Vehiculo(int potencia, String nombre) {
 		this.id = ++Vehiculo.countId;
@@ -38,7 +39,21 @@ public abstract class Vehiculo implements Movible{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
+
+	public static int getCountId() {
+		return countId;
+	}
+
+	public static void setCountId(int countId) {
+		Vehiculo.countId = countId;
+	}
+
+	public Trayecto getTrayecto() {
+		return trayecto;
+	}
+
+	public void setTrayecto(Trayecto trayecto) {
+		this.trayecto = trayecto;
+	}
 	
 }

@@ -7,7 +7,7 @@ public class Avion extends Vehiculo {
 	}
 
 	@Override
-	public String moverVehiculo(int metros) {
-		return "Distancia recorrida: " + metros + this.getPotencia()*3 + " Km's";
+	public int moverVehiculo(int metros) {
+		return metros + this.getPotencia()*3;
 	}
 }

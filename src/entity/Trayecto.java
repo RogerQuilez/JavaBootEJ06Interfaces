@@ -4,6 +4,9 @@ import utils.Utils;
 
 public class Trayecto {
 	
+	private static final int INTERVAL_COCHE_Y_MOTO = 7000;
+	private static final int INTERVAL_BARCO = 8000;
+	private static final int INTERVAL_AVION = 1000;
 	private int recorrido;
 	private int distancia;
 	private String nombreDestino;
@@ -75,11 +78,11 @@ public class Trayecto {
 	 */
 	private int getInterval() {
 		if (this.vehiculo instanceof Moto || this.vehiculo instanceof Coche) {
-			return 5000;
+			return INTERVAL_COCHE_Y_MOTO;
 		} else if (this.vehiculo instanceof Barco) {
-			return 8000;
+			return INTERVAL_BARCO;
 		} else {
-			return 1000;
+			return INTERVAL_AVION;
 		}
 	}
 	

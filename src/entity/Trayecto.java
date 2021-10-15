@@ -29,8 +29,6 @@ public class Trayecto {
 		
 		recorrido();
 		
-		System.out.println("Trayecto " + this.nombreDestino + " Finalizado!");
-		
 	};
 	
 	/**
@@ -68,7 +66,10 @@ public class Trayecto {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+		} else {
+			System.out.println("Trayecto " + this.nombreDestino + " Finalizado!");
 		}
+		
 	}
 	
 	/**

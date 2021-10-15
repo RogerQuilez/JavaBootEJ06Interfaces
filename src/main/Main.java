@@ -22,7 +22,7 @@ public class Main {
 		
 		añadirTrayectos(trayectos, vehiculos);
 
-		List<Thread> threadList = getThreads(trayectos);
+		List<Thread> threadList = getThreads(vehiculos);
 		
 		runThreads(threadList);
 		
@@ -44,11 +44,11 @@ public class Main {
 	 * @param trayectos -> Lista de tipo Trayecto enviada por parámetro para conseguir los hilos
 	 * @return -> Devuelve una lista con los hilos de los trayectos
 	 */
-	private static List<Thread> getThreads(List<Trayecto> trayectos) {
+	private static List<Thread> getThreads(List<Vehiculo> vehiculos) {
 		List<Thread> threadList = new LinkedList<>();
 		
-		for (Trayecto t: trayectos) {
-			Thread vehiculoT = new Thread(t.getEmpezarTrayecto());
+		for (Vehiculo v: vehiculos) {
+			Thread vehiculoT = new Thread(v.getTrayecto().getEmpezarTrayecto());
 			threadList.add(vehiculoT);
 		}
 		

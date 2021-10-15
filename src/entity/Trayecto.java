@@ -55,7 +55,7 @@ public class Trayecto {
 	 */
 	private void printarTrayecto() {		
 		
-		if (this.distancia - this.recorrido >= 0) {
+		if (this.distancia - this.recorrido > 0) {
 			
 			System.out.println("Distancia recorrida de " + this.vehiculo.getNombre() + " del trayecto " 
 			+ this.nombreDestino
